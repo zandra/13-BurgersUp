@@ -1,0 +1,7 @@
+{
+  "name": "13-BurgersUp",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Alex Stevens <zandra630@gmail.com>",
+  "license": "MIT"
+}
