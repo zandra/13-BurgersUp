@@ -1,0 +1,13 @@
+.container {
+  border: 1px solid burlywood;
+}
+
+.image {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.burgers {
+  text-align: center;
+}
