@@ -7,7 +7,7 @@ $(function() {
     $.ajax('/api/', {
       type: 'POST',
       data: newBurger
-      }).then (function(data) {
+      }).then (() => {
           $('#newBurger').val("");
           // How would you send a flash message here?
           location.reload();
