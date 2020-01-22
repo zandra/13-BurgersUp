@@ -1,6 +1,8 @@
-exports.index = (id, burger_name, devoured) => {
-`Id: ${id},
- Name: ${burger_name},
- Devoured: ${devoured}
-`
+exports.render = (burgers) => {
+  return burgers.map(b => {
+    `Id: ${b.id},
+     Burger Name: ${b.burger_name},
+     Devoured: ${b.devoured}
+     <hr>` 
+  });
 };

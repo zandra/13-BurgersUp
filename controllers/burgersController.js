@@ -1,35 +1,61 @@
-const express = require('express');
-const burger = require('../models/burger');
-const connection = require('../config/connection');
+const db = require('../models');
 
 exports.homepage=( (req, res) => {
-  connection.query(`SELECT * FROM burgers;`, (err, results) => {
-    if(err) {
-      console.log("OH NO 😵");
-      res.send(500).end();
-    }
-    res.json(results);
+  db.Burger.findAll().then( data => {
+    res.render("index", ( {title: 'Burgers Up', burgers: data} ));
   })
 });
 
+// POST > create item 
+exports.addBurger = ((req, res) => {
+  db.Burger.create({
+    burger_name: req.body.name
+  }).then(data => {
+    console.log(`${data.burger_name} burger with id ${data.id} successfully created`);
+    res.json(data, null, 2);
+  });
+});
 
-
-exports.apiGetAll = (req, res) => {
-  connection.query(`SELECT * FROM burgers;`, (err, results) => {
-    if(err) {
-      console.log("OH NO 😵");
-      res.send(500).end();
+// PUT > update item 
+exports.devourBurger = ((req, res) => {
+  db.Burger.update({
+    devoured: true
+  },
+  {
+    where: {
+      id: req.params.id
     }
-    res.json(results);
-  })
-};
+  }).then(data => {
+    res.json(data);
+  });
+});
 
-exports.apiGetById =  (req, res) => {
-  connection.query(`SELECT * FROM burgers WHERE id= ?;`, [req.params.id], (err, results) => {
-    if(err) {
-      console.log("OH NO 😵");
-      res.send(500).end();
+// DELETE > destroy item 
+exports.delBurger = ((req, res) => {
+  db.Burger.destroy(
+  {
+    where: {
+      id: req.params.id
     }
-    res.json(results);
-  })
-};
+  }).then(data => {
+    console.log(` ${data.id}  ${data.burger_name} deleted`);
+    // data === 1 ? console.log("success!") : console.log("Oops");
+  });
+});
+
+// Sanity Check API getAll and getOne
+exports.apiGetAll =( (req, res) => {
+  db.Burger.findAll().then(data => {
+    res.json(data);
+  });
+});
+
+exports.apiGetById = ((req, res) => {
+  db.Burger.findAll({
+    where: {
+      id: req.params.id
+    }
+  }).then(data => {
+    res.json(data);
+  });
+});

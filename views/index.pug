@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    .header
+      h1= `${title}`
+        p Eat delicious burgers
+    .burger-list
+      ul.burger-list
+        each burger in burgers
+          if !burger.devoured
+            li.burger=`${burger.id} ${burger.burger_name} `
+              button#devour(data-id=`${burger.id}`, name="devourBurger")= "Eat burger?"
+
+    .burger-add
+      h3 Add Burger
+      input#newBurger(type="text", name="newBurger")
+      input#addBurger(type="submit", value="Add Burger")
+    .burger-eaten
+      h3 Eaten Burgers
+      ul.burger-eaten
+        each burger in burgers
+          if burger.devoured
+            li.burger= `Eaten: ${burger.id} ${burger.burger_name} `
+              button#delete(data-id=`${burger.id}`, name="delete")= "Delete"
+
+      
+
+    
+          

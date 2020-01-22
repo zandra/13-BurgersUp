@@ -1,4 +1,4 @@
-exports.main = (body) => {
+exports.render = (body) => {
   `<html lang="en">
   <head>
     <meta charset="UTF-8">
