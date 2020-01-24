@@ -1,14 +1,11 @@
 const express = require('express');
+// const favicon = require('serve-favicon')
 const path = require('path');
 const pug = require('pug');
-const burgersController = require('./controllers/burgersController');
 
 const app = express();
 
 var PORT = process.env.PORT || 8080;
-
-// Require the models
-const db = require('./models');
 
 // View engine setup - Pug
 app.set('views', path.join(__dirname, 'views')); 
@@ -19,6 +16,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+// Require the models
+const db = require('./models');
+
+// Require the routes
+const burgersController = require('./controllers/burgersController');
 // App workflow 
 app.get('/', burgersController.homepage);
 

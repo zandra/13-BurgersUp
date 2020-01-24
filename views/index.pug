@@ -13,14 +13,14 @@ block content
       ul.burger-list
         each burger in burgers
           if !burger.devoured
-            li=`${burger.id} ${burger.burger_name} `
+            li #{burger.id} #{burger.burger_name} 
               button#devour(data-id=`${burger.id}`, name="devourBurger")= "Eat burger?"
     .yummy
       h3 Burger's Eaten !
       ul.burger-eaten
         each burger in burgers
           if burger.devoured
-            li= `Eaten: ${burger.burger_name} `
+            li Eaten: #{burger.burger_name} (#{burger.id})
               button#delete(data-id=`${burger.id}`, name="delete")= "Delete"
 
       
