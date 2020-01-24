@@ -1,14 +1,125 @@
 .container {
-  background: lightgray;
+  display: grid;
+  grid-template-columns: auto 40% auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "eatme imge yummy"
+    "eatme form yummy";
+  // place-items: center;
 }
-
-.header {
-  text-align: center;
-  img {
-    display: inline-block;
-  }
-}
+// .header {
+//   text-align: center;
+//   img {
+//     display: inline-block;
+//   }
+// }
 
 .burger-list {
   border: 1px solid burlywood;
 }
+
+.image {
+  grid-area: imge;
+  place-self: center;
+}
+
+.form {
+  grid-area: form;
+  place-self: center;
+  padding-top: 1rem;
+  #form {
+    height: 20px;
+  }
+}
+
+.eatme,
+.yummy {
+  // justify-self: center;
+  // align-self: end;
+  text-align: left;
+  // display: flex;
+  // flex-direction: column;
+  h3 {
+    text-align: center;
+  }
+}
+
+.eatme {
+  grid-area: eatme;
+}
+
+.yummy {
+  grid-area: yummy;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+
+  button {
+    margin-left: 5px;
+  }
+}
+
+// #practice {
+//   background-color: lightyellow;
+//   height: 100%;
+// }
+
+// .image {
+//   position: relative;
+//   height: 350px;
+//   img {
+//     padding: 1em;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     margin-right: -50%;
+//     transform: translate(-50%, -50%);
+//   }
+//   .form {
+//     padding: 1em;
+//     position: absolute;
+//     top: 110%;
+//     left: 50%;
+//     margin-right: -50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }
+
+// .lists:before,
+// .lists:after {
+//   content: "";
+//   display: table;
+// }
+// .lists:after {
+//   clear: both;
+// }
+
+// li {
+//   list-style-type: none;
+// }
+
+// .eatme,
+// .yummy {
+//   margin: 0 1.5%;
+//   width: 30%;
+//   li {
+//     border: 1px dotted black;
+//   }
+// }
+
+// .lists {
+//   clear: both;
+//   *zoom: 1;
+//   .eatme {
+//     float: left;
+//   }
+//   .yummy {
+//     float: right;
+//   }
+// }
+// .eat {
+//   display: inline-block;
+// }

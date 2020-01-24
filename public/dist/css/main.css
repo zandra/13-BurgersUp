@@ -1,16 +1,71 @@
 .container {
-  background: lightgray;
-}
-
-.header {
-  text-align: center;
-}
-
-.header img {
-  display: inline-block;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 40% auto;
+      grid-template-columns: auto 40% auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "eatme imge yummy" "eatme form yummy";
 }
 
 .burger-list {
   border: 1px solid burlywood;
+}
+
+.image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: imge;
+  place-self: center;
+}
+
+.form {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: form;
+  place-self: center;
+  padding-top: 1rem;
+}
+
+.form #form {
+  height: 20px;
+}
+
+.eatme,
+.yummy {
+  text-align: left;
+}
+
+.eatme h3,
+.yummy h3 {
+  text-align: center;
+}
+
+.eatme {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: eatme;
+}
+
+.yummy {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: yummy;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+li button {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=main.css.map */
