@@ -1,11 +1,11 @@
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 40% auto;
-      grid-template-columns: auto 40% auto;
+  -ms-grid-columns: 30% 40% 30%;
+      grid-template-columns: 30% 40% 30%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "eatme imge yummy" "eatme form yummy";
+      grid-template-areas: ". imge ." "eatme form yummy";
 }
 
 .image {
@@ -23,17 +23,18 @@
   padding-top: 1rem;
 }
 
-.form #form {
-  height: 20px;
+.form #addBurger {
+  -ms-grid-column-align: right;
+      justify-self: right;
 }
 
 .eatme,
 .yummy {
   -ms-grid-column-align: center;
       justify-self: center;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   text-align: left;
 }
 
@@ -43,15 +44,13 @@
 }
 
 .eatme {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: eatme;
 }
 
 .yummy {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: yummy;
 }
@@ -64,7 +63,7 @@ li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   list-style-type: none;
-  border: 1px solid burlywood;
+  border: 1px dotted black;
   padding: 10px;
 }
 

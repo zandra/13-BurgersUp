@@ -51,7 +51,7 @@ exports.apiGetAll =( (req, res) => {
 });
 
 exports.apiGetById = ((req, res) => {
-  db.Burger.findAll({
+  db.Burger.findOne({
     where: {
       id: req.params.id
     }
