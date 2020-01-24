@@ -5,17 +5,6 @@
   grid-template-areas:
     "eatme imge yummy"
     "eatme form yummy";
-  // place-items: center;
-}
-// .header {
-//   text-align: center;
-//   img {
-//     display: inline-block;
-//   }
-// }
-
-.burger-list {
-  border: 1px solid burlywood;
 }
 
 .image {
@@ -34,11 +23,9 @@
 
 .eatme,
 .yummy {
-  // justify-self: center;
-  // align-self: end;
+  justify-self: center;
+  align-self: end;
   text-align: left;
-  // display: flex;
-  // flex-direction: column;
   h3 {
     text-align: center;
   }
@@ -56,70 +43,10 @@ li {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  border: 1px solid burlywood;
+  padding: 10px;
 
   button {
     margin-left: 5px;
   }
 }
-
-// #practice {
-//   background-color: lightyellow;
-//   height: 100%;
-// }
-
-// .image {
-//   position: relative;
-//   height: 350px;
-//   img {
-//     padding: 1em;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     margin-right: -50%;
-//     transform: translate(-50%, -50%);
-//   }
-//   .form {
-//     padding: 1em;
-//     position: absolute;
-//     top: 110%;
-//     left: 50%;
-//     margin-right: -50%;
-//     transform: translate(-50%, -50%);
-//   }
-// }
-
-// .lists:before,
-// .lists:after {
-//   content: "";
-//   display: table;
-// }
-// .lists:after {
-//   clear: both;
-// }
-
-// li {
-//   list-style-type: none;
-// }
-
-// .eatme,
-// .yummy {
-//   margin: 0 1.5%;
-//   width: 30%;
-//   li {
-//     border: 1px dotted black;
-//   }
-// }
-
-// .lists {
-//   clear: both;
-//   *zoom: 1;
-//   .eatme {
-//     float: left;
-//   }
-//   .yummy {
-//     float: right;
-//   }
-// }
-// .eat {
-//   display: inline-block;
-// }

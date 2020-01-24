@@ -8,10 +8,6 @@
       grid-template-areas: "eatme imge yummy" "eatme form yummy";
 }
 
-.burger-list {
-  border: 1px solid burlywood;
-}
-
 .image {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -33,6 +29,11 @@
 
 .eatme,
 .yummy {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   text-align: left;
 }
 
@@ -63,6 +64,8 @@ li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   list-style-type: none;
+  border: 1px solid burlywood;
+  padding: 10px;
 }
 
 li button {
