@@ -1,10 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+body {
+  height: 100%;
+  background-color: tomato;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(yellow), to(#ff6347));
+  background-image: linear-gradient(yellow, #ff6347);
+  background-repeat: no-repeat;
+  font-family: "Indie Flower", cursive, Helvetica, Arial, sans-serif;
+  font-size: large;
+  color: brown;
+}
+
 .container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 30% 40% 30%;
       grid-template-columns: 30% 40% 30%;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
+  -ms-grid-rows: auto 500px;
+      grid-template-rows: auto 500px;
       grid-template-areas: ". imge ." "eatme form yummy";
 }
 
@@ -19,7 +31,11 @@
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: form;
-  place-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: top;
+      -ms-grid-row-align: top;
+      align-self: top;
   padding-top: 1rem;
 }
 
@@ -35,7 +51,8 @@
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
-  text-align: left;
+  border: 1px dotted brown;
+  background-color: cornsilk;
 }
 
 .eatme h3,
@@ -56,18 +73,42 @@
 }
 
 li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
   list-style-type: none;
-  border: 1px dotted black;
   padding: 10px;
 }
 
 li button {
   margin-left: 5px;
+}
+
+@media (max-width: 700px) {
+  body {
+    background-color: #ff6347;
+  }
+  .container {
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "eatme imge " "yummy form ";
+  }
+  .eatme,
+  .yummy {
+    -ms-grid-column-align: left;
+        justify-self: left;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+  .eatme h3,
+  .yummy h3 {
+    text-align: center;
+  }
+  li {
+    padding: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
