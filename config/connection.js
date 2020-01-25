@@ -4,13 +4,7 @@ let connection;
 if(process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "saturdaybonnet",
-    database: "burgers_db"
-  });
+  connection = mysql.createConnection();
 }
 
 connection.connect(function(err) {
@@ -18,6 +12,13 @@ connection.connect(function(err) {
     console.error("error connecting: " + err.stack);
     return;
   }
+
+  // connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+  //   if (err) throw err;
+  
+  //   console.log('The solution is: ', rows[0].solution);
+  // });
+  
   console.log("connected as id " + connection.threadId);
 });
 

@@ -38,7 +38,7 @@ exports.delBurger = ((req, res) => {
       id: req.params.id
     }
   }).then(data => {
-    console.log(` ${data.id}  ${data.burger_name} deleted`);
+    res.json(data);
     // data === 1 ? console.log("success!") : console.log("Oops");
   });
 });

@@ -25,8 +25,8 @@ $(function() {
   });
   // Delete Burger 
   $('.burger-eaten').on('click', '#delete', function(event) {
-    event.preventDefault();
-    let id = $(this).data('id');
+      event.preventDefault();
+      let id = $(this).data('id');
     $.ajax(`/api/${id}`, {
       type: 'DELETE'
     }).then(() => {

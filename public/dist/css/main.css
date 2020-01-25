@@ -53,6 +53,7 @@ body {
       align-self: start;
   border: 1px dotted brown;
   background-color: cornsilk;
+  min-width: 200px;
 }
 
 .eatme h3,

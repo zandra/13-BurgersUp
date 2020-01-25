@@ -5,6 +5,9 @@ const pug = require('pug');
 
 const app = express();
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 var PORT = process.env.PORT || 8080;
 
 // View engine setup - Pug
